@@ -1,0 +1,53 @@
+{
+  "manifest_version": 3,
+  "name": "Nexus Steam Library Importer",
+  "version": "1.0.0",
+  "description": "Find Steam games supported by Nexus Mods and add the missing ones to My games.",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://www.nexusmods.com/*",
+    "https://steamcommunity.com/*",
+    "https://data.nexusmods.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Open Nexus Steam importer"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.nexusmods.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "styles.css"
+      ],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://steamcommunity.com/*/games/*",
+        "https://steamcommunity.com/my/games/*"
+      ],
+      "js": [
+        "steam-library.js"
+      ],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://www.nexusmods.com/games*"
+      ],
+      "js": [
+        "nexus-worker.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}

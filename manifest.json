@@ -1,0 +1,87 @@
+{
+  "manifest_version": 3,
+  "name": "Nexus Library Importer",
+  "version": "1.0.0",
+  "description": "Import supported games from your connected PC libraries into Nexus Mods My games.",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://www.nexusmods.com/*",
+    "https://steamcommunity.com/*",
+    "https://www.gog.com/*",
+    "https://data.nexusmods.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "64": "icons/icon-64.png",
+    "128": "icons/icon-128.png"
+  },
+  "action": {
+    "default_title": "Open Nexus library importer",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png",
+      "48": "icons/icon-48.png"
+    }
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "provider-icons/*.png",
+        "provider-icons/*.svg"
+      ],
+      "matches": [
+        "https://www.nexusmods.com/*"
+      ]
+    }
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.nexusmods.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "styles.css"
+      ],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://steamcommunity.com/*/games/*",
+        "https://steamcommunity.com/my/games/*"
+      ],
+      "js": [
+        "steam-library.js"
+      ],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://www.gog.com/account*",
+        "https://www.gog.com/*/account*"
+      ],
+      "js": [
+        "gog-library.js"
+      ],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://www.nexusmods.com/games*"
+      ],
+      "js": [
+        "nexus-worker.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}

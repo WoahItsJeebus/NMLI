@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en" data-nsi-fixture="true">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nexus Library Importer fixture</title>
+    <link rel="stylesheet" href="../styles.css?v=1.0.0" />
+    <style>
+      * { box-sizing: border-box; }
+      body { background: linear-gradient(#0b0c0e 0 70%, #111318); color: #f5f5f5; font-family: Inter, system-ui, sans-serif; margin: 0; min-height: 100vh; }
+      .site-nav { align-items:center; background:#0b0c0e; border-bottom:1px solid #292b30; display:flex; gap:34px; height:62px; padding:0 max(28px, calc((100vw - 1120px) / 2)); }
+      .brand { align-items:center; color:#f38a36; display:flex; font-size:18px; font-weight:800; gap:10px; letter-spacing:.02em; }
+      .brand-mark { background:linear-gradient(145deg,#fb9a42,#db5f18); border-radius:7px; display:block; height:27px; transform:rotate(9deg); width:27px; }
+      .site-link { color:#f2f2f3; font-size:14px; font-weight:650; }
+      .search { background:#15171b; border:1px solid #35383f; border-radius:5px; color:#a9adb5; flex:1; margin-left:auto; max-width:360px; padding:10px 14px; }
+      .page { margin:0 auto; max-width:1120px; padding:34px 24px 80px; }
+      .welcome { align-items:center; display:flex; gap:18px; margin-bottom:30px; }
+      .avatar { background:linear-gradient(145deg,#4d5665,#20242b); border-radius:50%; height:66px; width:66px; }
+      .welcome h1 { font-size:30px; margin:0 0 6px; }
+      .welcome p { color:#aeb1b8; margin:0; }
+      section { background:#1b1c20; border:1px solid #22252a; border-radius:6px; max-width:1120px; overflow:hidden; position:relative; }
+      section > button { align-items:center; background:transparent; border:0; color:#f4f4f4; cursor:pointer; display:flex; justify-content:space-between; padding:12px 16px; width:100%; }
+      .heading { align-items:center; display:flex; gap:10px; }
+      .pictogram { align-items:center; background:#e87c33; border-radius:9px; display:flex; font-size:18px; height:34px; justify-content:center; width:34px; }
+      .title { font-size:20px; font-weight:750; }
+      .games { display:grid; gap:14px; grid-template-columns:repeat(10, minmax(0, 1fr)); padding:10px 16px 20px; }
+      .tile { aspect-ratio:2/3; background:linear-gradient(145deg,#4a576a,#242932); border-radius:5px; box-shadow:0 5px 14px #090a0d; display:block; }
+      .tile:nth-child(2n) { background:linear-gradient(145deg,#6a4b3d,#26282f); }
+      .tile:nth-child(3n) { background:linear-gradient(145deg,#526447,#252a28); }
+      .add { align-items:center; border:1px dashed #686b72; color:#aaa; display:flex; font-size:30px; justify-content:center; text-decoration:none; }
+      .lower-grid { display:grid; gap:22px; grid-template-columns:1fr 1fr; margin-top:24px; }
+      .panel { background:#202228; border-radius:6px; height:170px; padding:20px; }
+      .panel h2 { font-size:19px; margin:0; }
+      @media (max-width:760px) { .site-link { display:none; } .games { grid-template-columns:repeat(5,1fr); } .lower-grid { grid-template-columns:1fr; } }
+    </style>
+    <script src="fixture-bootstrap.js"></script>
+  </head>
+  <body>
+    <nav class="site-nav" aria-label="Fixture navigation">
+      <span class="brand"><span class="brand-mark"></span>NEXUSMODS</span>
+      <span class="site-link">Games</span><span class="site-link">Mods</span><span class="site-link">Collections</span>
+      <span class="search">Search Nexus Mods</span>
+    </nav>
+    <main class="page">
+      <div class="welcome"><span class="avatar"></span><div><h1>Welcome back, Jeebus</h1><p>Tracking centre &nbsp; · &nbsp; Download history &nbsp; · &nbsp; My content</p></div></div>
+      <section>
+        <button type="button">
+          <span class="heading"><span class="pictogram">🎮</span><span class="title">My games</span></span>
+          <span>⌃</span>
+        </button>
+        <div class="games">
+          <a class="tile" href="https://www.nexusmods.com/games/skyrimspecialedition"><img alt="Skyrim Special Edition" hidden /></a>
+          <a class="tile" href="https://www.nexusmods.com/games/fallout4"><img alt="Fallout 4" hidden /></a>
+          <a class="tile" href="https://www.nexusmods.com/games/eldenring"><img alt="Elden Ring" hidden /></a>
+          <a class="tile" href="https://www.nexusmods.com/games/cyberpunk2077"><img alt="Cyberpunk 2077" hidden /></a>
+          <a class="tile" href="https://www.nexusmods.com/games/stardewvalley"><img alt="Stardew Valley" hidden /></a>
+          <a class="tile" href="https://www.nexusmods.com/games/subnautica"><img alt="Subnautica" hidden /></a>
+          <a class="tile" href="https://www.nexusmods.com/games/thewitcher3"><img alt="The Witcher 3" hidden /></a>
+          <a class="tile add" aria-label="Add game" href="https://www.nexusmods.com/games">+</a>
+        </div>
+      </section>
+      <div class="lower-grid"><div class="panel"><h2>Trending mods</h2></div><div class="panel"><h2>Popular collections</h2></div></div>
+    </main>
+    <script src="../content.js?v=1.0.2"></script>
+  </body>
+</html>
