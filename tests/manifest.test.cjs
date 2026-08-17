@@ -101,6 +101,7 @@ test("submission kit includes privacy, disclosure, and reviewer materials", () =
     "store-listing/PRIVACY_PRACTICES.md",
     "store-listing/REVIEW_NOTES.md",
     "store-listing/SUBMISSION_CHECKLIST.md",
+    "store-listing/site/index.html",
     "store-listing/site/privacy.html",
     "store-listing/site/support.html"
   ]) {

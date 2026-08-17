@@ -46,6 +46,6 @@ Nexus Mods, Steam, GOG, Ubisoft, and EA are trademarks of their respective owner
 
 ## Related URLs
 
-- Privacy policy URL: host `store-listing/site/privacy.html` over HTTPS and paste its public URL.
-- Support URL: host `store-listing/site/support.html` or use a public project support page.
-- Homepage URL: optional.
+- Privacy policy URL: `https://woahitsjeebus.github.io/NMLI/privacy.html`
+- Support URL: `https://woahitsjeebus.github.io/NMLI/support.html`
+- Homepage URL: `https://woahitsjeebus.github.io/NMLI/`

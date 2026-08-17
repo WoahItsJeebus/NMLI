@@ -1,34 +1,22 @@
 # Chrome privacy-practices answers
 
-## Single purpose
+## Single purpose description
 
-Match a user's supported browser-visible PC game libraries with games supported by Nexus Mods, add only user-confirmed missing matches, and remove only games the user explicitly selects and confirms in the My games manager.
+Match games in a user's browser-visible Steam or GOG library with Nexus Mods, then add or remove only the Nexus My games entries the user explicitly reviews and confirms.
 
 ## Permission justifications
 
-### `storage`
+### Storage justification
 
-Stores the last selected provider, optional last-used Steam profile URL, a public Nexus games-catalog cache, and the latest My games change job so progress can survive a closed modal or service-worker restart. It is not used for analytics, advertising, or tracking.
+Stores the last selected provider, an optional last-used Steam profile URL, a 24-hour cache of the public Nexus games catalog, and the latest user-confirmed My games change job so visible progress survives a closed modal or service-worker restart. Data remains in `chrome.storage.local` and is not used for analytics, advertising, or tracking.
 
-### `https://www.nexusmods.com/*`
+### Host permission justification
 
-Adds the Import button to the Nexus home page, reads the games already visible in My games, and uses Nexus Mods' native bookmark control to add or remove only the games the user confirms.
-
-### `https://steamcommunity.com/*`
-
-Loads the signed-in user's or user-specified public Steam Community games page and reads game names and Steam app IDs for matching. It does not read passwords, cookies, tokens, playtime, friends, messages, or purchases.
-
-### `https://www.gog.com/*`
-
-Loads the signed-in user's GOG account library and reads visible game names and product IDs for matching. Sign-in is completed directly on GOG. The extension does not read passwords, cookies, tokens, orders, payment details, or account secrets.
-
-### `https://data.nexusmods.com/*`
-
-Downloads Nexus Mods' public `games.json` catalog so platform titles can be matched to current Nexus game domains. The response is data, not executable code.
+Access to `nexusmods.com` inserts the importer, reads the user's visible My games list, and activates Nexus Mods' native bookmark control only for confirmed additions or removals. Access to `steamcommunity.com` reads visible game names and app IDs from the signed-in user's or a specified public games page. Access to `gog.com` reads visible game names and product IDs from the signed-in GOG library. Access to `data.nexusmods.com` downloads the public `games.json` catalog used for title matching. Sign-in stays on each provider; the extension does not read or store passwords, cookies, tokens, payment data, orders, messages, friends, purchases, or playtime.
 
 ## Remote code
 
-Select `No, I am not using remote code.` All executable JavaScript and CSS is contained in the extension package. The extension downloads only data and webpage content needed for its single purpose.
+Select `No, I am not using remote code.` All executable JavaScript and CSS is contained in the extension package. The extension downloads only data and webpage content needed for its single purpose, so no remote-code justification is required.
 
 ## Data-use disclosures
 

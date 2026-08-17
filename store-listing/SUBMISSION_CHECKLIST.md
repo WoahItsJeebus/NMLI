@@ -20,10 +20,14 @@
 
 - Confirm the public publisher/developer name.
 - Confirm a monitored support email in both developer accounts.
-- Host `site/privacy.html` over HTTPS and paste its public URL into both listings.
-- Host `site/support.html`, or use a relevant public support URL.
 - Choose the Opera distribution license or provide an EULA.
 - Choose the Firefox Add-ons distribution license.
+
+## Public URLs
+
+- Privacy policy: `https://woahitsjeebus.github.io/NMLI/privacy.html`
+- Support: `https://woahitsjeebus.github.io/NMLI/support.html`
+- Homepage: `https://woahitsjeebus.github.io/NMLI/`
 
 ## Chrome Web Store
 
@@ -32,7 +36,7 @@
 3. Paste `CHROME_WEB_STORE.md` into the Store listing fields.
 4. Upload the files under `store-assets/chrome`.
 5. Complete the Privacy tab from `PRIVACY_PRACTICES.md`.
-6. Add the public privacy-policy and support URLs.
+6. Add the public privacy-policy and support URLs above.
 7. Select public or unlisted distribution, review, and submit when ready.
 
 ## Opera Add-ons

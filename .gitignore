@@ -1,0 +1,20 @@
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+*.local
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+credentials/
+secrets/
+
+# Dependencies, logs, and editor files
+node_modules/
+*.log
+.vscode/
+.DS_Store
+Thumbs.db

@@ -61,6 +61,11 @@ Temporary add-ons are removed when Firefox closes. Normal installation requires 
 
 No passwords, cookies, authentication tokens, API keys, payment data, playtime, orders, or general browsing history are read or stored. Temporary scanning and Nexus worker tabs are opened only for the requested operation and closed automatically.
 
+Public extension pages:
+
+- [Privacy policy](https://woahitsjeebus.github.io/NMLI/privacy.html)
+- [Support](https://woahitsjeebus.github.io/NMLI/support.html)
+
 Platform icons are bundled in the extension from artwork served by the providers' official websites. Steam, GOG, and Ubisoft are packaged at 256 x 256 for high-DPI displays, while EA remains a scalable SVG. Their source URLs are documented in `provider-icons/SOURCES.md`; opening the chooser does not contact those websites just to display an icon.
 
 ## Matching safety
@@ -78,6 +83,8 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\Build.ps1
 ```
 
 `tests/fixture.html` is a standalone visual fixture for the injected button, provider chooser, results, removal manager, and progress states.
+
+GitHub Actions deploys only `store-listing/site` to GitHub Pages. A separate Gitleaks workflow scans every push and pull request, while `.gitignore` excludes common local credential and signing-key files.
 
 ## Web-store release
 
