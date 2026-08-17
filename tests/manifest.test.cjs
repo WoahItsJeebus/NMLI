@@ -103,9 +103,18 @@ test("submission kit includes privacy, disclosure, and reviewer materials", () =
     "store-listing/SUBMISSION_CHECKLIST.md",
     "store-listing/site/index.html",
     "store-listing/site/privacy.html",
-    "store-listing/site/support.html"
+    "store-listing/site/support.html",
+    "privacy.html",
+    "support.html"
   ]) {
     assert.equal(fs.existsSync(path.join(root, file)), true, `${file} should exist`);
+  }
+});
+
+test("root Pages aliases render the canonical privacy and support pages", () => {
+  for (const page of ["privacy", "support"]) {
+    const alias = fs.readFileSync(path.join(root, `${page}.html`), "utf8");
+    assert.match(alias, new RegExp(`include_relative store-listing/site/${page}\\.html`));
   }
 });
 

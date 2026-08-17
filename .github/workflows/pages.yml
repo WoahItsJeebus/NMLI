@@ -5,7 +5,9 @@ on:
     branches: [main]
     paths:
       - ".github/workflows/pages.yml"
+      - "privacy.html"
       - "store-listing/site/**"
+      - "support.html"
   workflow_dispatch:
 
 permissions:
